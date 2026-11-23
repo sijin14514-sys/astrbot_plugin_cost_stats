@@ -1,0 +1,72 @@
+{
+  "owner_qq": {
+    "type": "string",
+    "description": "允许查账的主人 QQ 号（留空则按 AstrBot 管理员权限校验）",
+    "default": ""
+  },
+  "private_only": {
+    "type": "bool",
+    "description": "是否仅限私聊查询（防止在群里暴露账单）",
+    "default": true
+  },
+  "default_days": {
+    "type": "int",
+    "description": "直接输入 /耗费 时默认统计的天数",
+    "default": 7
+  },
+  "peak_hit_price": {
+    "type": "float",
+    "description": "高峰时段缓存命中单价（元/百万 token，工作日 9-12、14-18 点）",
+    "default": 0.04
+  },
+  "peak_miss_price": {
+    "type": "float",
+    "description": "高峰时段缓存未命中单价（元/百万 token）",
+    "default": 2.0
+  },
+  "peak_output_price": {
+    "type": "float",
+    "description": "高峰时段输出单价（元/百万 token）",
+    "default": 8.0
+  },
+  "off_hit_price": {
+    "type": "float",
+    "description": "空闲时段缓存命中单价（元/百万 token，含周末全天）",
+    "default": 0.02
+  },
+  "off_miss_price": {
+    "type": "float",
+    "description": "空闲时段缓存未命中单价（元/百万 token）",
+    "default": 1.0
+  },
+  "off_output_price": {
+    "type": "float",
+    "description": "空闲时段输出单价（元/百万 token）",
+    "default": 4.0
+  },
+  "daily_report_enable": {
+    "type": "bool",
+    "description": "是否每天定时推送当日耗费日报",
+    "default": false
+  },
+  "daily_report_time": {
+    "type": "string",
+    "description": "每日推送时间（24 小时制 HH:MM，北京时间）",
+    "default": "23:50"
+  },
+  "daily_report_umo": {
+    "type": "string",
+    "description": "日报推送目标 UMO（如 napcat_qq:FriendMessage:<OWNER_QQ>）",
+    "default": ""
+  },
+  "enable_llm_tool": {
+    "type": "bool",
+    "description": "是否允许在私聊里直接问她“花了多少钱”（注册 query_daily_cost 工具）",
+    "default": true
+  },
+  "track_extra_calls": {
+    "type": "bool",
+    "description": "是否自动补记后台插件直连 Provider.text_chat 的调用（补齐与官方账单的差额）",
+    "default": true
+  }
+}

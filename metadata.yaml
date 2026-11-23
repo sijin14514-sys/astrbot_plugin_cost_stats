@@ -1,0 +1,17 @@
+name: astrbot_plugin_cost_stats
+desc: 肆小喵每日耗费统计。基于 data_v4.db 的 provider_stats 按 DeepSeek 官方高峰/空闲两档定价实时计算每日花费，并支持导入 DeepSeek 官方导出的用量 CSV/ZIP 进行核对。
+help: |
+  管理员命令：
+  /耗费             查看近 7 天每日耗费与命中率
+  /耗费 14          查看近 14 天每日耗费（支持 1~90 天）
+  /耗费 今天        仅查看今天的耗费
+  /耗费 2026-11-20  查看指定日期的耗费
+  /今日耗费         快速查看今天的耗费
+  /余额             查询 DeepSeek 账户实时余额
+  /账单核对         解析 plugin_data/.../bills/ 下最新官方 CSV/ZIP 并与本地统计对账
+version: v0.2.0
+author: sijin14514-sys
+repo: "https://github.com/sijin14514-sys/astrbot_plugin_cost_stats"
+display_name: 每日耗费统计
+short_desc: 实时计算每日 DeepSeek 花费、缓存命中率，支持官方账单 CSV 核对。
+astrbot_version: ">=4.27.0"
